@@ -1,0 +1,23 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="#FCE9EB"/>
+  <path d="M256 264C256 200 338 152 512 152C686 152 768 200 768 264V760C768 840 704 904 624 904H400C320 904 256 840 256 760V264Z" fill="#FAD9DE" stroke="#D2A3B3" stroke-width="20"/>
+  <defs>
+    <clipPath id="pouchClip">
+      <path d="M256 264C256 200 338 152 512 152C686 152 768 200 768 264V760C768 840 704 904 624 904H400C320 904 256 840 256 760V264Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#pouchClip)">
+    <rect x="300" y="296" width="424" height="72" rx="36" fill="#F3C2D0"/>
+    <rect x="256" y="664" width="300" height="280" fill="#F3A6C1"/>
+    <rect x="556" y="664" width="212" height="280" fill="#F5D57C"/>
+    <path d="M640 720C720 720 772 764 804 832C824 876 804 936 756 960H640V720Z" fill="#F08E9B"/>
+  </g>
+  <path d="M300 244C300 196 354 160 424 160C454 160 484 168 512 184C540 168 570 160 600 160C670 160 724 196 724 244C724 292 670 328 600 328C548 328 516 308 512 296C508 308 476 328 424 328C354 328 300 292 300 244Z" fill="#F2A4C6" stroke="#D889AD" stroke-width="16"/>
+  <circle cx="512" cy="256" r="52" fill="#E495B7" stroke="#D889AD" stroke-width="16"/>
+  <rect x="500" y="308" width="24" height="72" rx="12" fill="#E19AB8"/>
+  <rect x="352" y="432" width="320" height="304" rx="96" fill="#F6DEE5" stroke="#D7A8B7" stroke-width="16"/>
+  <text x="512" y="560" text-anchor="middle" font-size="104" font-family="Noto Sans CJK TC, Noto Sans CJK JP, sans-serif" fill="#8B6A7A">
+    <tspan x="512" y="560">御</tspan>
+    <tspan x="512" y="680">守</tspan>
+  </text>
+</svg>

@@ -1,0 +1,66 @@
+<UserControl x:Class="SubtitleGuardian.App.Views.AsrPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SubtitleGuardian.App.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Margin="10">
+        <Grid Margin="0,0,0,10" AllowDrop="True" Drop="OnMediaDrop" PreviewDragOver="OnDragOver" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="來源" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <TextBox x:Name="SourcePathText" Grid.Column="1" Height="28" IsReadOnly="True" Margin="0,0,8,0" AllowDrop="True" PreviewDragOver="OnDragOver" Drop="OnMediaDrop" />
+            <Button x:Name="PickMediaButton" Content="匯入媒體" Grid.Column="2" Width="120" Height="28" Click="OnPickMedia" />
+        </Grid>
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="輸出目錄" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <TextBox x:Name="ExportDirText" Grid.Column="1" Height="28" LostFocus="OnExportDirLostFocus" />
+            <ComboBox x:Name="OutputFormatCombo" Grid.Column="2" Width="90" Height="28" Margin="8,0,0,0" DisplayMemberPath="Label" SelectedValuePath="Id" SelectionChanged="OnOutputFormatSelectionChanged" />
+            <Button x:Name="BrowseExportDirButton" Content="瀏覽" Grid.Column="3" Width="70" Height="28" Margin="8,0,0,0" Click="OnBrowseExportDir" />
+            <Button x:Name="ClearExportDirButton" Content="清除" Grid.Column="4" Width="70" Height="28" Margin="8,0,0,0" Click="OnClearExportDir" />
+            <Button x:Name="OpenExportDirButton" Content="開啟" Grid.Column="5" Width="70" Height="28" Margin="8,0,0,0" Click="OnOpenExportDir" />
+        </Grid>
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="音軌" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <ComboBox x:Name="AudioTracksCombo" Grid.Column="1" Height="28" DisplayMemberPath="Label" SelectedValuePath="AudioIndex" SelectionChanged="OnAudioTrackSelectionChanged" />
+            <TextBlock Text="語言" Grid.Column="2" VerticalAlignment="Center" Margin="12,0,10,0" />
+            <ComboBox x:Name="LanguageCombo" Grid.Column="3" Height="28" DisplayMemberPath="Label" SelectedValuePath="Code" />
+        </Grid>
+
+        <Grid Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="引擎" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <ComboBox x:Name="AsrEngineCombo" Grid.Column="1" Height="28" DisplayMemberPath="Label" SelectedValuePath="Id" />
+            <TextBlock Text="模型" Grid.Column="2" VerticalAlignment="Center" Margin="12,0,10,0" />
+            <ComboBox x:Name="ModelSizeCombo" Grid.Column="3" Height="28" DisplayMemberPath="Label" SelectedValuePath="Value" />
+            <Button x:Name="TranscribeButton" Grid.Column="4" Content="開始轉錄" Width="160" Height="28" Margin="12,0,0,0" Click="OnTranscribeAsr" IsEnabled="False" />
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\SubtitleGuardian.Installer.wixproj": {}
+  },
+  "projects": {
+    "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\SubtitleGuardian.Installer.wixproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\SubtitleGuardian.Installer.wixproj",
+        "projectName": "SubtitleGuardian_Setup",
+        "projectPath": "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\SubtitleGuardian.Installer.wixproj",
+        "packagesPath": "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\.nuget\\packages",
+        "outputPath": "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\obj\\",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\NuGet.config"
+        ],
+        "originalTargetFrameworks": [
+          "native"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "native": {
+            "targetAlias": "native",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "native": {
+          "targetAlias": "native",
+          "dependencies": {
+            "WixToolset.Heat": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "WixToolset.UI.wixext": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

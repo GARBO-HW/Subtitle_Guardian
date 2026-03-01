@@ -1,0 +1,6 @@
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.App.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.Application.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.Domain.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.Engines.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.Infrastructure.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\Publish\SubtitleGuardian.App.exe

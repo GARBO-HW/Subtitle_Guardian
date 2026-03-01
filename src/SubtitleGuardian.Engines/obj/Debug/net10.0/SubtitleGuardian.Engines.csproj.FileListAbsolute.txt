@@ -1,0 +1,15 @@
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\bin\Debug\net10.0\SubtitleGuardian.Engines.deps.json
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\bin\Debug\net10.0\SubtitleGuardian.Engines.dll
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\bin\Debug\net10.0\SubtitleGuardian.Engines.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\bin\Debug\net10.0\SubtitleGuardian.Domain.dll
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\bin\Debug\net10.0\SubtitleGuardian.Domain.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.csproj.AssemblyReference.cache
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.AssemblyInfoInputs.cache
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.AssemblyInfo.cs
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.csproj.CoreCompileInputs.cache
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\Subtitle.0FD2AC9B.Up2Date
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.dll
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\refint\SubtitleGuardian.Engines.dll
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\SubtitleGuardian.Engines.pdb
+C:\Users\a1130\Desktop\Subtitle_Guardian\src\SubtitleGuardian.Engines\obj\Debug\net10.0\ref\SubtitleGuardian.Engines.dll

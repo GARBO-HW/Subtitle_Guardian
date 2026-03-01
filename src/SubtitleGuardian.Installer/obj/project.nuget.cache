@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "24cy/D43KrA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\src\\SubtitleGuardian.Installer\\SubtitleGuardian.Installer.wixproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\.nuget\\packages\\wixtoolset.heat\\5.0.0\\wixtoolset.heat.5.0.0.nupkg.sha512",
+    "C:\\Users\\a1130\\Desktop\\Subtitle_Guardian\\.nuget\\packages\\wixtoolset.ui.wixext\\5.0.0\\wixtoolset.ui.wixext.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

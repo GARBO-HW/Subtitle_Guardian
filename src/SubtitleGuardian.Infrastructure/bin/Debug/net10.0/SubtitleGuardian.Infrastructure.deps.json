@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "SubtitleGuardian.Infrastructure/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Domain": "1.0.0",
+          "SubtitleGuardian.Engines": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.Infrastructure.dll": {}
+        }
+      },
+      "SubtitleGuardian.Domain/1.0.0": {
+        "runtime": {
+          "SubtitleGuardian.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SubtitleGuardian.Engines/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.Engines.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SubtitleGuardian.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Engines/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

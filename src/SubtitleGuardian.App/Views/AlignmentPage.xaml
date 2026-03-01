@@ -1,0 +1,88 @@
+<UserControl x:Class="SubtitleGuardian.App.Views.AlignmentPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SubtitleGuardian.App.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- 1. Audio Source -->
+        <GroupBox Header="1. 選擇音訊/影片來源" Margin="0,0,0,10">
+            <Grid Margin="5" AllowDrop="True" Drop="OnAudioDrop" PreviewDragOver="OnDragOver" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="AudioSourceText" Height="28" IsReadOnly="True" Margin="0,0,8,0" AllowDrop="True" PreviewDragOver="OnDragOver" Drop="OnAudioDrop" />
+                <Button x:Name="PickAudioButton" Content="選擇檔案" Grid.Column="1" Width="100" Height="28" Click="OnPickAudio" />
+            </Grid>
+        </GroupBox>
+
+        <!-- 2. Text Source -->
+        <GroupBox Header="2. 輸入正確文稿" Grid.Row="1" Margin="0,0,0,10">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,5" AllowDrop="True" Drop="OnTextDrop" PreviewDragOver="OnDragOver" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="文稿來源：" VerticalAlignment="Center" Margin="0,0,10,0" />
+                    <TextBox x:Name="TextSourcePathText" Grid.Column="1" Height="28" IsReadOnly="True" Margin="0,0,8,0" AllowDrop="True" PreviewDragOver="OnDragOver" Drop="OnTextDrop" />
+                    <Button x:Name="PickTextButton" Content="匯入文字檔" Grid.Column="2" Width="100" Height="28" Click="OnPickTextFile" />
+                </Grid>
+                
+                <TextBlock Grid.Row="1" Text="或直接貼上文字內容：" Margin="0,5,0,5" />
+                <TextBox x:Name="TranscriptInput" Grid.Row="2" MinHeight="100" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" TextChanged="OnTranscriptTextChanged" />
+            </Grid>
+        </GroupBox>
+
+        <!-- 3. Alignment Settings -->
+        <GroupBox Header="3. 設定" Grid.Row="2" Margin="0,0,0,10">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Text="語言：" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <ComboBox x:Name="LanguageCombo" Grid.Column="1" Width="120" Height="28" DisplayMemberPath="Label" SelectedValuePath="Code" />
+                
+                <TextBlock Text="最大單行字數：" Grid.Column="3" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <TextBox x:Name="MaxCharsText" Grid.Column="4" Width="60" Height="28" Text="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            </Grid>
+        </GroupBox>
+
+        <!-- 4. Action -->
+        <Grid Grid.Row="3" Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="輸出目錄：" VerticalAlignment="Center" Margin="0,0,5,0" />
+            <TextBox x:Name="ExportDirText" Grid.Column="1" Height="28" Margin="0,0,5,0" />
+            <Button x:Name="BrowseExportButton" Content="..." Grid.Column="2" Width="30" Height="28" Margin="0,0,10,0" Click="OnBrowseExport" />
+            
+            <Button x:Name="AlignButton" Grid.Column="3" Content="開始匹配 (Align)" Width="150" Height="36" Click="OnStartAlignment" IsEnabled="False" />
+        </Grid>
+    </Grid>
+</UserControl>

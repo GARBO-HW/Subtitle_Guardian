@@ -1,0 +1,90 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "SubtitleGuardian.App/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Application": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.App.dll": {}
+        }
+      },
+      "SubtitleGuardian.Application/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Domain": "1.0.0",
+          "SubtitleGuardian.Engines": "1.0.0",
+          "SubtitleGuardian.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SubtitleGuardian.Domain/1.0.0": {
+        "runtime": {
+          "SubtitleGuardian.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SubtitleGuardian.Engines/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.Engines.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SubtitleGuardian.Infrastructure/1.0.0": {
+        "dependencies": {
+          "SubtitleGuardian.Domain": "1.0.0",
+          "SubtitleGuardian.Engines": "1.0.0"
+        },
+        "runtime": {
+          "SubtitleGuardian.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SubtitleGuardian.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Engines/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SubtitleGuardian.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SubtitleGuardian.App/SubtitleGuardian.App.csproj" />
+    <Project Path="src/SubtitleGuardian.Application/SubtitleGuardian.Application.csproj" />
+    <Project Path="src/SubtitleGuardian.Domain/SubtitleGuardian.Domain.csproj" />
+    <Project Path="src/SubtitleGuardian.Engines/SubtitleGuardian.Engines.csproj" />
+    <Project Path="src/SubtitleGuardian.Infrastructure/SubtitleGuardian.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SubtitleGuardian.Application.Tests/SubtitleGuardian.Application.Tests.csproj" />
+  </Folder>
+</Solution>

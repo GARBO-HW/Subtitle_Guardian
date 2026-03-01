@@ -1,0 +1,39 @@
+<Project Sdk="WixToolset.Sdk/5.0.0">
+  <PropertyGroup>
+    <OutputName>SubtitleGuardian_Setup</OutputName>
+    <OutputType>Package</OutputType>
+    <InstallerPlatform>x64</InstallerPlatform>
+    <InstallerCulture>zh-TW</InstallerCulture>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- Define constants for heat preprocessor variables -->
+    <DefineConstants>PublishDir=..\..\Publish;DataDir=..\..\.subtitleguardian</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="5.0.0" />
+    <PackageReference Include="WixToolset.Heat" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Package.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Harvest the Publish output (application files) -->
+    <!-- SuppressRootDirectory=true means files go directly into DirectoryRefId (INSTALLFOLDER) -->
+    <HarvestDirectory Include="..\..\Publish">
+      <ComponentGroupName>AppFiles</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+      <PreprocessorVariable>var.PublishDir</PreprocessorVariable>
+      <SuppressRegistry>true</SuppressRegistry>
+    </HarvestDirectory>
+    <!-- Harvest the .subtitleguardian data folder -->
+    <!-- SuppressRootDirectory=false means it creates a folder (name of source dir) inside DirectoryRefId -->
+    <!-- So it creates INSTALLFOLDER\.subtitleguardian -->
+    <HarvestDirectory Include="..\..\.subtitleguardian">
+      <ComponentGroupName>DataFiles</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <SuppressRootDirectory>false</SuppressRootDirectory>
+      <PreprocessorVariable>var.DataDir</PreprocessorVariable>
+      <SuppressRegistry>true</SuppressRegistry>
+    </HarvestDirectory>
+  </ItemGroup>
+</Project>
