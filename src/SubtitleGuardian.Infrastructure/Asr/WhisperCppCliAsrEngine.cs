@@ -63,7 +63,7 @@ public sealed class WhisperCppCliAsrEngine : IAsrEngine
             Directory.CreateDirectory(WhisperTempRoot);
 
             string lang = NormalizeLanguage(options.Language);
-            WhisperCppRunPlan plan = await ResolveRunPlanAsync(exe, cancellationToken).ConfigureAwait(false);
+            WhisperCppRunPlan plan = await ResolveRunPlanAsync(exe, options.Device, cancellationToken).ConfigureAwait(false);
 
             string outputBase = CreateOutputBase();
             string args = BuildArgs(safeModelPath, safeAudioPath, outputBase, lang, plan.ExtraArgs);
@@ -126,8 +126,13 @@ public sealed class WhisperCppCliAsrEngine : IAsrEngine
         return args;
     }
 
-    private async Task<WhisperCppRunPlan> ResolveRunPlanAsync(string exe, CancellationToken cancellationToken)
+    private async Task<WhisperCppRunPlan> ResolveRunPlanAsync(string exe, ProcessingDevice device, CancellationToken cancellationToken)
     {
+        if (device == ProcessingDevice.CpuOnly)
+        {
+            return new WhisperCppRunPlan(WhisperCppComputeMode.Cpu, null);
+        }
+
         lock (GpuPolicyLock)
         {
             if (CachedGpuSupport is not null)
