@@ -76,7 +76,8 @@ public sealed class WhisperCppCliAsrEngine : IAsrEngine
                 progress?.Report(new AsrProgress(1, "GPU 推理不可用，改用 CPU..."));
 
                 outputBase = CreateOutputBase();
-                args = BuildArgs(safeModelPath, safeAudioPath, outputBase, lang, extraArgs: null);
+                string? fallbackArgs = string.IsNullOrWhiteSpace(plan.ExtraArgs) ? "--no-gpu" : null;
+                args = BuildArgs(safeModelPath, safeAudioPath, outputBase, lang, extraArgs: fallbackArgs);
                 r = await _runner.RunAsync(exe, args, cancellationToken).ConfigureAwait(false);
             }
 
@@ -144,12 +145,12 @@ public sealed class WhisperCppCliAsrEngine : IAsrEngine
         string? gpuArg = await TryDetectGpuArgAsync(exe, cancellationToken).ConfigureAwait(false);
         lock (GpuPolicyLock)
         {
-            bool supported = !string.IsNullOrWhiteSpace(gpuArg);
+            bool supported = gpuArg is not null;
             CachedGpuSupport = supported;
-            CachedGpuArg = supported ? gpuArg : null;
+            CachedGpuArg = gpuArg;
         }
 
-        return string.IsNullOrWhiteSpace(gpuArg)
+        return gpuArg is null
             ? new WhisperCppRunPlan(WhisperCppComputeMode.Cpu, null)
             : new WhisperCppRunPlan(WhisperCppComputeMode.Gpu, gpuArg);
     }
@@ -172,6 +173,11 @@ public sealed class WhisperCppCliAsrEngine : IAsrEngine
         if (help.Contains("--gpu_layers"))
         {
             return "--gpu_layers 999";
+        }
+
+        if (help.Contains("--no-gpu") || help.Contains("-ng"))
+        {
+            return string.Empty;
         }
 
         return null;
