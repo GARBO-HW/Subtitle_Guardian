@@ -24,6 +24,7 @@ public partial class AsrPage : UserControl
     private readonly ObservableCollection<AudioTrackRow> _audioTracks;
     private readonly ObservableCollection<AsrEngineRow> _asrEngines;
     private readonly ObservableCollection<ModelSizeRow> _modelSizes;
+    private readonly ObservableCollection<ProcessingDeviceRow> _devices;
     private readonly ObservableCollection<OutputFormatRow> _outputFormats;
     private readonly ObservableCollection<LanguageRow> _languages;
     private readonly string _settingsPath;
@@ -58,6 +59,11 @@ public partial class AsrPage : UserControl
             new ModelSizeRow(TranscriptionQuality.Medium, "Medium"),
             new ModelSizeRow(TranscriptionQuality.Large, "Large")
         };
+        _devices = new ObservableCollection<ProcessingDeviceRow>
+        {
+            new ProcessingDeviceRow(ProcessingDevice.GpuWithFallback, "GPU (自動判定)"),
+            new ProcessingDeviceRow(ProcessingDevice.CpuOnly, "CPU (強制)")
+        };
         _outputFormats = new ObservableCollection<OutputFormatRow>
         {
             new OutputFormatRow(OutputFormat.None, "不匯出"),
@@ -80,6 +86,8 @@ public partial class AsrPage : UserControl
         AsrEngineCombo.SelectedValue = AsrEngineId.Whisper;
         ModelSizeCombo.ItemsSource = _modelSizes;
         ModelSizeCombo.SelectedValue = TranscriptionQuality.Medium;
+        DeviceCombo.ItemsSource = _devices;
+        DeviceCombo.SelectedValue = ProcessingDevice.GpuWithFallback;
         LanguageCombo.ItemsSource = _languages;
         LanguageCombo.SelectedValue = "zh-TW";
         OutputFormatCombo.ItemsSource = _outputFormats;
@@ -277,6 +285,7 @@ public partial class AsrPage : UserControl
         string sourcePath = _sourcePath;
         string? exportDir = _exportDir;
         OutputFormat outputFormat = _outputFormat;
+        ProcessingDevice device = DeviceCombo.SelectedValue is ProcessingDevice d ? d : ProcessingDevice.GpuWithFallback;
 
         _isTranscribing = true;
         UpdateUiState();
@@ -319,7 +328,7 @@ public partial class AsrPage : UserControl
             var req = new TranscriptionRequest(
                 engineId,
                 wav,
-                new TranscribeOptions(Language: lang, Quality: quality, EnableWordTimestamps: false)
+                new TranscribeOptions(Language: lang, Quality: quality, EnableWordTimestamps: true, Device: device)
             );
 
             IReadOnlyList<Segment> segments = await _transcription.ExecuteAsync(req, asrProgress, ctx.CancellationToken).ConfigureAwait(false);
@@ -446,6 +455,7 @@ public partial class AsrPage : UserControl
 
     private sealed record AsrEngineRow(AsrEngineId Id, string Label);
     private sealed record ModelSizeRow(TranscriptionQuality Value, string Label);
+    private sealed record ProcessingDeviceRow(ProcessingDevice Value, string Label);
     private enum OutputFormat
     {
         None = 0,
